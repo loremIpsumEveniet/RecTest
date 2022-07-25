@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/BackroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#737373"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopDivider" />
+
+    <TextView
+        android:id="@+id/QueryErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopDivider" />
+
+    <TextView
+        android:id="@+id/ContentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample Text"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/BackToSearchButton"
+        app:layout_constraintStart_toEndOf="@+id/BackToSearchButton"
+        app:layout_constraintTop_toTopOf="@+id/BackToSearchButton" />
+
+    <ImageButton
+        android:id="@+id/BackToSearchButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_clear"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toTopOf="@+id/LibraryScrollBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/TopDivider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BackToSearchButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/MainContentView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/DescriptionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="0px"
+        android:paddingLeft="0px"
+        android:paddingTop="0px"
+        android:paddingRight="0px"
+        android:paddingBottom="0px"
+        android:text="Description:"
+        android:textColor="#737373"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="@+id/MainContentView"
+        app:layout_constraintTop_toTopOf="@+id/MainContentView" />
+
+    <RatingBar
+        android:id="@+id/RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:padding="0px"
+        android:progress="0"
+        android:saveEnabled="false"
+        android:stepSize="1"
+        app:layout_constraintBottom_toBottomOf="@+id/MainContentView"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="@+id/MainContentView"
+        app:layout_constraintTop_toBottomOf="@+id/RatingName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:numStars="5" />
+
+    <ScrollView
+        android:id="@+id/DescriptionScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionDivider"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintStart_toStartOf="@+id/MainContentView"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionName">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/DescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#707070"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/RatingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="60dp"
+        android:text="Rec Rating:"
+        android:textColor="#737373"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/MainContentView"
+        app:layout_constraintEnd_toEndOf="@+id/BackroundImage"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/BackroundImage" />
+
+    <ToggleButton
+        android:id="@+id/AddToLibaryButton"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_orange_toggle"
+        android:textOff="Add"
+        android:textOn="Remove"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/MainContentView"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintStart_toEndOf="@+id/RatingBar"
+        app:layout_constraintTop_toTopOf="@+id/RatingBar" />
+
+    <TextView
+        android:id="@+id/ReleaseDateName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Release Date:"
+        android:textColor="#737373"
+        app:layout_constraintStart_toStartOf="@+id/MainContentView"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionDivider"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/TypeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="Type:"
+        android:textColor="#737373"
+        app:layout_constraintStart_toEndOf="@+id/ReleaseDateName"
+        app:layout_constraintTop_toTopOf="@+id/ReleaseDateName"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/StatusName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:textColor="#737373"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/TypeName"
+        app:layout_constraintTop_toTopOf="@+id/ReleaseDateName"
+        tools:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ReleaseDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample Date"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/ReleaseDateName"
+        app:layout_constraintTop_toBottomOf="@+id/ReleaseDateName" />
+
+    <TextView
+        android:id="@+id/TypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:text="Sample Type"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/TypeName"
+        app:layout_constraintTop_toBottomOf="@+id/TypeName" />
+
+    <TextView
+        android:id="@+id/StatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample Status"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/StatusName"
+        app:layout_constraintTop_toBottomOf="@+id/StatusName" />
+
+    <View
+        android:id="@+id/DescriptionDivider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="164dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/MainContentView"
+        app:layout_constraintEnd_toEndOf="@+id/MainContentView"
+        app:layout_constraintStart_toStartOf="@+id/MainContentView" />
+
+    <TextView
+        android:id="@+id/SoftErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Please select a raiting"
+        android:textColor="#FF5722"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/AddToLibaryButton"
+        app:layout_constraintEnd_toEndOf="@+id/AddToLibaryButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/AddToLibaryButton"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
